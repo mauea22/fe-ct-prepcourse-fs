@@ -163,19 +163,19 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   //  let contador = 0;
-   // for (let index = 0; index < array.length -1; index++) {
+   let contador = 0;
+   for (let index = 0; index < array.length-1 ; index++) {
       
-   //    if (array[index] === array[index+1]) {
-   //       contador = contador + 1
-   //    }
+      if (array[index] === array[index+1]) {
+         contador = contador + 1
+      }
       
-   // }
-   // if (contador === array.length) {
-   //    return true;
-   // } else {
-   //    return false;
-   // }
+   }
+   if (contador === array.length-1) {
+      return true;
+   } else {
+      return false;
+   }
 }
 
 function mesesDelAño(array) {
@@ -183,18 +183,46 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   //result = array.filter(r => r === "Enero" && r==="Marzo" && r==="Noviembre");
+   let nuevoArray = [];
+   for(let mes of array){
+      if(mes === "Enero" || mes ==="Marzo" || mes ==="Noviembre"){
+         nuevoArray.push(mes)
+      }
+         
+   }
+   if (nuevoArray.length == 3) {
+      return nuevoArray;
+   } else {
+      return "No se encontraron los meses pedidos";
+   }
+
+
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   tabla6 = [];
+   for (let i = 0; i <= 10; i++) {
+      tabla6.push(i*6);
+   }
+
+   return tabla6;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   mayoresACien = [];
+   for(let item of array){
+      if (item > 100){
+         mayoresACien.push(item);
+      }
+   }
+   return mayoresACien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -208,6 +236,24 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   bucleAumentado = [];
+   
+   for (let i = 0; i < 10; i++) {
+      
+      if (i==0) {
+         bucleAumentado[0] = num + 2;
+      } else {
+         bucleAumentado[i] = bucleAumentado[i-1] + 2;
+      }
+
+      if (bucleAumentado[i] == i) {
+         return "Se interrumpió la ejecución";
+         break;
+      
+      }
+     
+   }
+   return bucleAumentado;
 }
 
 function continueStatement(num) {
@@ -217,6 +263,22 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   bucleAumentado = [];
+   let i = 0;
+
+   while (i < 10) {
+      
+      if( i === 5){
+         i++;
+         continue;
+      };
+      num = num + 2;
+      bucleAumentado.push(num);
+      i++;
+   }
+
+   return bucleAumentado;
+   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
